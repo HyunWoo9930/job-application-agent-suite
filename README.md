@@ -439,6 +439,12 @@ python3 scripts/ai_style_checker.py \
 
 현재 코퍼스 스캐너는 `.docx` 내부 XML을 직접 읽는 방식이며 PDF 파서는 포함하지 않습니다.
 
+## Contributing
+
+이 저장소가 도움이 되었다면 이슈, 제안, PR 모두 환영합니다. 자소서 작성 흐름을 더 현실적으로 만들 수 있는 아이디어가 있다면 편하게 남겨주세요.
+
+도움이 되었다면 GitHub에서 `Star`를 눌러주시면 큰 힘이 됩니다.
+
 ## License
 
 MIT License. See [LICENSE](./LICENSE).

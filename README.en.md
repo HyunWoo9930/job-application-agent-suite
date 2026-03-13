@@ -434,6 +434,12 @@ It is not fully unsupported. The scripts are mostly portable, but the documented
 
 The current corpus scanner reads `.docx` by parsing document XML and does not include a PDF parser.
 
+## Contributing
+
+Issues, suggestions, and PRs are all welcome if this repository helped you or if you have ideas to make the workflow more practical.
+
+If you found this project useful, consider giving it a GitHub `Star`.
+
 ## License
 
 MIT License. See [LICENSE](./LICENSE).
