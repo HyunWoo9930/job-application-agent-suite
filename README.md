@@ -33,7 +33,8 @@
 - 초안 이후 반복 표현, 선언형 문장, 과장된 톤 점검
 - Codex skill 또는 독립형 프롬프트/스크립트 세트로 사용
 
-## Repository Structure
+<details>
+<summary>Repository structure</summary>
 
 ```text
 job-application-agent-suite/
@@ -54,7 +55,10 @@ job-application-agent-suite/
 - `templates/`: 샘플 입력 JSON
 - `SKILL.md`: Codex skill 운영 규칙
 
-## Requirements
+</details>
+
+<details>
+<summary>Requirements and platform support</summary>
 
 - macOS 또는 Linux
 - Python 3.9+
@@ -78,6 +82,17 @@ job-application-agent-suite/
 ```bash
 brew install python ripgrep git
 ```
+
+Windows는 아예 불가능한 상태는 아닙니다. 현재 스크립트들은 대부분 표준 Python과 `pathlib` 기반이라서 동작 가능성이 높지만, 문서의 기본 경로 예시와 설치 예시는 macOS/Linux 기준입니다. Windows에서는 경로만 Windows 형식으로 바꿔서 사용하는 것이 현실적인 방식입니다.
+
+예시:
+
+```powershell
+py scripts\use_agent.py --list
+py scripts\scan_experience_corpus.py --path "$HOME\Desktop\취업\자기소개서"
+```
+
+</details>
 
 ## Quick Start
 
@@ -112,7 +127,8 @@ cp -R /path/to/job-application-agent-suite ~/.codex/skills/
 python3 ~/.codex/skills/job-application-agent-suite/scripts/use_agent.py --list
 ```
 
-## Scripts
+<details>
+<summary>Scripts</summary>
 
 ### `scripts/use_agent.py`
 
@@ -171,7 +187,10 @@ python3 scripts/char_window_check.py --file /tmp/draft.txt --char-limit 800
 python3 scripts/ai_style_checker.py --file /tmp/draft.txt
 ```
 
-## End-to-End Example
+</details>
+
+<details>
+<summary>End-to-end example</summary>
 
 ```bash
 mkdir -p ~/job_runs/naver_backend/Q1
@@ -200,7 +219,10 @@ python3 scripts/ai_style_checker.py \
   --file ~/job_runs/naver_backend/Q1/04_draft.txt
 ```
 
-## Included Templates
+</details>
+
+<details>
+<summary>Included templates</summary>
 
 - `templates/agent-00-input.sample.json`
 - `templates/agent-02a-input.sample.json`
@@ -210,12 +232,17 @@ python3 scripts/ai_style_checker.py \
 - `templates/agent-07-input.sample.json`
 - `templates/pipeline-state.sample.json`
 
-## Workflow Notes
+</details>
+
+<details>
+<summary>Workflow notes</summary>
 
 - 기본 승인 모드는 `manual_per_step`
 - `agent-02a.ready_for_agent_02 = false`이면 다음 단계로 넘어가지 않음
 - `external_feedback_required = true`이고 `external_feedback_notes`가 비어 있으면 `agent-07`을 진행하지 않음
 - 최종 길이 기준은 `char_limit - 20 <= length <= char_limit`
+
+</details>
 
 ## FAQ
 
@@ -225,7 +252,7 @@ python3 scripts/ai_style_checker.py \
 
 ### Windows에서도 사용할 수 있나요?
 
-파이썬 스크립트는 대부분 이식 가능하지만, 기본 경로와 문서는 macOS/Linux 기준으로 작성되어 있습니다.
+완전 미지원은 아닙니다. 스크립트 자체는 대부분 Windows에서도 동작할 가능성이 높지만, 기본 경로와 설치 예시는 macOS/Linux 기준입니다. `python3` 대신 `py`, `/tmp/...` 대신 Windows 경로를 쓰는 식으로 바꿔 사용하면 됩니다.
 
 ### 왜 `.pdf`는 직접 읽지 않나요?
 

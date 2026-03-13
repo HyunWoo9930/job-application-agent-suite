@@ -33,7 +33,8 @@ This repository is designed as a controllable writing pipeline rather than a sin
 - Reviewing drafts for repetitive phrasing and formulaic tone
 - Using the project as a Codex skill or as a standalone prompt/script set
 
-## Repository Structure
+<details>
+<summary>Repository structure</summary>
 
 ```text
 job-application-agent-suite/
@@ -53,7 +54,10 @@ job-application-agent-suite/
 - `templates/`: sample JSON inputs
 - `SKILL.md`: Codex skill operating rules
 
-## Requirements
+</details>
+
+<details>
+<summary>Requirements and platform support</summary>
 
 - macOS or Linux
 - Python 3.9+
@@ -77,6 +81,17 @@ Example:
 ```bash
 brew install python ripgrep git
 ```
+
+Windows is not completely unsupported. Most scripts are plain Python and use `pathlib`, so they are likely to work, but the documented default paths and install examples are written for macOS/Linux. On Windows, the practical approach is to adapt the paths and command names.
+
+Example:
+
+```powershell
+py scripts\use_agent.py --list
+py scripts\scan_experience_corpus.py --path "$HOME\Desktop\취업\자기소개서"
+```
+
+</details>
 
 ## Quick Start
 
@@ -111,7 +126,8 @@ cp -R /path/to/job-application-agent-suite ~/.codex/skills/
 python3 ~/.codex/skills/job-application-agent-suite/scripts/use_agent.py --list
 ```
 
-## Scripts
+<details>
+<summary>Scripts</summary>
 
 ### `scripts/use_agent.py`
 
@@ -168,7 +184,10 @@ Reviews repetitive phrasing, formulaic endings, long lines, and repeated sentenc
 python3 scripts/ai_style_checker.py --file /tmp/draft.txt
 ```
 
-## End-to-End Example
+</details>
+
+<details>
+<summary>End-to-end example</summary>
 
 ```bash
 mkdir -p ~/job_runs/naver_backend/Q1
@@ -197,7 +216,10 @@ python3 scripts/ai_style_checker.py \
   --file ~/job_runs/naver_backend/Q1/04_draft.txt
 ```
 
-## Included Templates
+</details>
+
+<details>
+<summary>Included templates</summary>
 
 - `templates/agent-00-input.sample.json`
 - `templates/agent-02a-input.sample.json`
@@ -207,12 +229,17 @@ python3 scripts/ai_style_checker.py \
 - `templates/agent-07-input.sample.json`
 - `templates/pipeline-state.sample.json`
 
-## Workflow Notes
+</details>
+
+<details>
+<summary>Workflow notes</summary>
 
 - default approval mode: `manual_per_step`
 - `agent-02a.ready_for_agent_02 = false` blocks the next stage
 - `external_feedback_required = true` and empty `external_feedback_notes` blocks `agent-07`
 - final length target: `char_limit - 20 <= length <= char_limit`
+
+</details>
 
 ## FAQ
 
@@ -222,7 +249,7 @@ No. The repository centers on prompt files and helper scripts.
 
 ### Does it work on Windows?
 
-The scripts are mostly portable, but the documented defaults assume macOS/Linux paths.
+It is not fully unsupported. The scripts are mostly portable, but the documented defaults assume macOS/Linux paths. In practice, Windows usage means replacing `python3` with `py` and adapting file paths.
 
 ### Why is `.pdf` not directly supported?
 
