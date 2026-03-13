@@ -447,6 +447,15 @@ cp -R /absolute/path/job-application-agent-suite ~/.codex/skills/
 
 Mention the skill name directly. For example: `Use job-application-agent-suite and start with company analysis` or `Use job-application-agent-suite and only review my draft`.
 
+### Does this only work with Codex?
+
+No. The `references/`, `scripts/`, and `templates/` in this repository can also be used in other environments such as Claude or Gemini CLI.
+
+The difference is mostly in how you invoke it:
+
+- The installed-skill workflow through `SKILL.md` is most directly tailored to Codex.
+- In Claude or Gemini CLI, the practical pattern is usually to print a prompt with `scripts/use_agent.py` and then paste or adapt that prompt into the other tool.
+
 ### Can I submit the output as-is?
 
 Not recommended. The outputs are better treated as drafts, analysis notes, or revision candidates rather than final submission-ready essays. You should review them yourself and ideally get extra feedback from another AI or a human reviewer.

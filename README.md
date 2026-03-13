@@ -452,6 +452,15 @@ cp -R /absolute/path/job-application-agent-suite ~/.codex/skills/
 
 스킬 이름을 같이 말해주면 됩니다. 예를 들면 `job-application-agent-suite 써서 회사 분석부터 해줘`, `job-application-agent-suite로 피드백만 해줘`처럼 요청할 수 있습니다.
 
+### 꼭 Codex에서만 써야 하나요?
+
+아니요. 이 저장소의 `references/`, `scripts/`, `templates/`는 다른 환경에서도 사용할 수 있습니다. 예를 들어 Claude, Gemini CLI, 다른 에이전트 IDE에서도 프롬프트를 꺼내서 같은 흐름으로 활용할 수 있습니다.
+
+다만 차이는 있습니다.
+
+- `SKILL.md`를 통해 설치된 skill처럼 바로 호출하는 방식은 Codex에 가장 직접적으로 맞춰져 있습니다.
+- Claude나 Gemini CLI에서는 보통 `scripts/use_agent.py`로 프롬프트를 출력한 뒤, 그 내용을 해당 도구에 넣어 사용하는 방식이 자연스럽습니다.
+
 ### 결과물을 그대로 제출해도 되나요?
 
 권장하지 않습니다. 이 저장소의 결과물은 최종 제출본이라기보다 초안, 분석안, 수정안에 가깝습니다. 반드시 본인이 다시 읽고 손봐야 하고, 가능하면 다른 AI나 사람에게 한 번 더 검토받는 것이 좋습니다.
