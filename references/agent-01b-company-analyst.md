@@ -20,6 +20,7 @@ Goal:
 - Explain the company's business structure and revenue logic.
 - Identify core strengths and strategic direction.
 - Extract points that can support motivation and post-join contribution writing.
+- Verify the analysis against recent official company information and recent news when possible.
 
 Input:
 - Company: {{company_name}}
@@ -35,25 +36,55 @@ Output format:
    - revenue_or_value_driver
    - strategic_importance
    - evidence_source
-3) Strengths and differentiators
+3) Core competitiveness
+   - competitiveness_point
+   - why_it_matters
+   - evidence_source
+4) Latest business focus and investment direction
+   - current_focus_business_or_new_business
+   - investment_area_for_future_growth
+   - why_now
+   - evidence_source
+   - confidence
+5) Competitor comparison and differentiation
+   - competitor_name
+   - comparison_axis
+   - company_advantage_or_difference
+   - evidence_source
+   - confidence
+6) Culture, work environment, and welfare
+   - culture_or_work_environment_point
+   - welfare_or_support_program
+   - how_it_differs_from_general_it_company_context
+   - evidence_source
+   - confidence
+7) Strengths and differentiators
    - strength
    - why_it_matters
    - evidence_source
-4) Direction and challenge map
+8) Direction and challenge map
    - current_direction
    - why_now
    - challenge_or_execution_risk
    - implication_for_applicant
-5) Writing hooks
+9) Writing hooks
    - motivation_hooks (max 5)
    - future_contribution_hooks (max 5)
-6) Structured chaining fields
+10) Verification notes
+   - checked_official_homepage_or_careers_page
+   - checked_recent_news_or_press
+   - unclear_or_unverified_points
+11) Structured chaining fields
    - company_analysis_summary
    - company_keywords
 
 Rules:
 - Prioritize business reports, IR, official site, and posting text.
+- Check the latest official homepage, careers page, investor relations page, or newsroom when discussing current business focus, culture, or company direction.
+- If recent news is used, prefer company press releases or clearly attributable reporting and distinguish fact from interpretation.
 - Mark inferred points with [inference].
 - Avoid unsupported financial detail if official evidence is weak.
 - Focus on insights the applicant can actually use in Korean self-introduction writing.
+- If a point is ambiguous, outdated, or cannot be verified, explicitly say it is not accurate enough to confirm.
+- Do not present guessed competitor comparisons or culture claims as fact.
 ```

@@ -415,6 +415,7 @@ python3 scripts/ai_style_checker.py \
 - `agent-02a.ready_for_agent_02 = false`이면 다음 단계로 넘어가지 않음
 - `external_feedback_required = true`이고 `external_feedback_notes`가 비어 있으면 `agent-07`을 진행하지 않음
 - 최종 길이 기준은 `char_limit - 20 <= length <= char_limit`
+- 회사 분석 단계는 주요 사업, 핵심 경쟁력, 산업 내 위치, 최근 집중 사업과 투자 방향, 경쟁사 비교, 기업 문화/복지, 최신 공식 정보 검증을 우선 다룹니다.
 
 </details>
 

@@ -21,6 +21,7 @@ Goal:
 - Clarify the industry's role in society.
 - Summarize recent trends, regulatory/technology shifts, and future direction.
 - Produce hooks that can be reused for motivation and post-join contribution writing.
+- Identify where the target company appears to sit in the industry and what structural strengths matter.
 
 Input:
 - Company: {{company_name}}
@@ -42,20 +43,28 @@ Output format:
    - implication_for_company
    - implication_for_role
    - evidence_source
-4) Risk and pressure factors
+4) Company position in industry
+   - company_position
+   - likely_strength_in_industry
+   - competitor_or_peer_group
+   - confidence
+   - evidence_source
+5) Risk and pressure factors
    - factor
    - impact_on_company
    - impact_on_role
-5) Writing hooks
+6) Writing hooks
    - motivation_hooks (max 5)
    - future_contribution_hooks (max 5)
-6) Structured chaining fields
+7) Structured chaining fields
    - industry_analysis_summary
    - industry_keywords
 
 Rules:
 - Prefer trusted official/primary sources when available.
+- Prefer recent sources when discussing trend changes or current industry direction.
 - Mark inferred points with [inference].
 - Keep industry explanations concrete and useful for self-introduction writing.
 - Hooks must be reusable in Korean application answers, not generic slogans.
+- If the company's exact industry standing cannot be verified cleanly, say it is not fully confirmed.
 ```

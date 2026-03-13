@@ -59,4 +59,5 @@ Rules:
 - Mark inferred role details, including day-in-the-life, with [inference].
 - Competency rows must keep stable ids (e.g. C01, C02).
 - Hooks must be directly reusable for competency/fit questions.
+- When company culture or business direction clearly affects the role, reflect that connection briefly and cite the source.
 ```

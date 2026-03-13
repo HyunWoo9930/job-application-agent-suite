@@ -30,6 +30,7 @@ Goal:
 - Merge industry, company, and role findings into writing-ready guidance.
 - Preserve reusable hooks for motivation, post-join contribution, and job-fit writing.
 - Keep one downstream-compatible output for the rest of the pipeline.
+- Preserve what is verified versus what remains inferred or unconfirmed.
 
 Input:
 - Company: {{company_name}}
@@ -57,13 +58,20 @@ Output format:
    - confidence (high/medium/low)
    - evidence_source (job posting quote or section)
 3) Culture and tone hints
-4) Talent profile mapping
+4) Company investigation checklist summary
+   - main_business_and_core_competitiveness
+   - industry_position_and_strength
+   - recent_focus_and_investment_direction
+   - competitor_comparison_and_differentiation
+   - culture_work_environment_and_welfare
+   - verification_status
+5) Talent profile mapping
    - talent_trait
    - source (careers/value page/leadership message/posting)
    - how to evidence in essay
-5) Red flags to avoid (overclaims, vague language, unsupported stack claims)
-6) Writing strategy for applicant (5 bullets)
-7) Structured chaining fields
+6) Red flags to avoid (overclaims, vague language, unsupported stack claims)
+7) Writing strategy for applicant (5 bullets)
+8) Structured chaining fields
    - industry_analysis_summary
    - company_analysis_summary
    - role_analysis_summary
@@ -78,7 +86,9 @@ Rules:
 - Keep output factual and concise.
 - Preserve downstream compatibility with existing `agent-01` consumers.
 - Prioritize official sources for talent profile (company careers page, core values page, posting text).
+- For current company facts, prefer the latest official homepage, careers page, newsroom, IR materials, and clearly attributable recent reporting.
 - If talent profile is not explicitly available, provide inferred traits with `[inference]` and state the evidence gap.
+- If a company fact or current initiative cannot be verified confidently, state that it is not accurate enough to confirm.
 - Writing hooks should support:
   - motivation answers: industry + company
   - future contribution answers: industry trend + company direction

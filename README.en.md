@@ -410,6 +410,7 @@ python3 scripts/ai_style_checker.py \
 - `agent-02a.ready_for_agent_02 = false` blocks the next stage
 - `external_feedback_required = true` and empty `external_feedback_notes` blocks `agent-07`
 - final length target: `char_limit - 20 <= length <= char_limit`
+- company analysis prioritizes main business, core competitiveness, industry position, recent focus and investment direction, competitor comparison, culture/welfare, and latest official-source verification.
 
 </details>
 
