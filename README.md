@@ -417,7 +417,6 @@ python3 scripts/ai_style_checker.py \
 - 최종 길이 기준은 `char_limit - 20 <= length <= char_limit`
 - 회사 분석 단계는 주요 사업, 핵심 경쟁력, 산업 내 위치, 최근 집중 사업과 투자 방향, 경쟁사 비교, 기업 문화/복지, 최신 공식 정보 검증을 우선 다룹니다.
 - `agent-06`은 단순 AI 판정이 아니라, 한국어 자소서용 AI-likeness forensic review 기준으로 라인 단위 근거와 수정 방향을 제시합니다.
-- `agent-06b`는 "AI처럼 안 보이게"보다 "실제 사람이 고민하고 쓴 느낌"을 살리는 단계로, 판단 근거와 경험의 결을 더 선명하게 만듭니다.
 
 </details>
 

@@ -412,7 +412,6 @@ python3 scripts/ai_style_checker.py \
 - final length target: `char_limit - 20 <= length <= char_limit`
 - company analysis prioritizes main business, core competitiveness, industry position, recent focus and investment direction, competitor comparison, culture/welfare, and latest official-source verification.
 - `agent-06` now works as an AI-likeness forensic review step with line-level reasoning and rewrite guidance, not a binary detector.
-- `agent-06b` focuses less on "not looking AI-generated" and more on sounding like a real person with real judgment, lived context, and grounded motivation.
 
 </details>
 
