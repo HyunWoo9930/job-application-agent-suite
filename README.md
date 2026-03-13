@@ -414,6 +414,15 @@ python3 scripts/ai_style_checker.py \
 </details>
 
 <details>
+<summary>Reference screenshot</summary>
+
+아래 이미지는 검토 결과를 추가 확인하는 과정에서 참고한 예시 스크린샷입니다.
+
+![Copykiller sample result](./assets/copykiller-zero-sample.png)
+
+</details>
+
+<details>
 <summary>Workflow notes</summary>
 
 - 기본 승인 모드는 `manual_per_step`

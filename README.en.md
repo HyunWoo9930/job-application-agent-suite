@@ -409,6 +409,15 @@ python3 scripts/ai_style_checker.py \
 </details>
 
 <details>
+<summary>Reference screenshot</summary>
+
+The image below is a sample screenshot used as a reference during additional review checks.
+
+![Copykiller sample result](./assets/copykiller-zero-sample.png)
+
+</details>
+
+<details>
 <summary>Workflow notes</summary>
 
 - default approval mode: `manual_per_step`
