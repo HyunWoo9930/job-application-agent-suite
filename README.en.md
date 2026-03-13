@@ -10,7 +10,8 @@ A multi-agent toolkit for Korean job application writing. It covers company and 
 > 2. Run `python3 scripts/use_agent.py --list` to see available agents.
 > 3. Run `python3 scripts/use_agent.py --agent agent-00 --input templates/agent-00-input.sample.json` to print one prompt.
 > 4. Open the `examples/` folder to see sample draft and QA output formats.
-> 5. In Codex, say something like `Use job-application-agent-suite and help me draft one application answer`.
+> 5. If you want Codex to call it as a skill, first place this folder in `~/.codex/skills/job-application-agent-suite`.
+> 6. Then ask Codex something like `Use job-application-agent-suite and help me draft one application answer`.
 
 ## Overview
 
@@ -244,6 +245,11 @@ mkdir -p ~/.codex/skills
 cp -R /path/to/job-application-agent-suite ~/.codex/skills/
 python3 ~/.codex/skills/job-application-agent-suite/scripts/use_agent.py --list
 ```
+
+Important:
+
+- A simple `git clone` is enough to run the local scripts and inspect the examples.
+- But if you want Codex to recognize and invoke `job-application-agent-suite` as an installed skill, it should live at `~/.codex/skills/job-application-agent-suite`.
 
 After installation, you can ask Codex to use the skill directly.
 

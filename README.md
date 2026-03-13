@@ -10,7 +10,8 @@
 > 2. `python3 scripts/use_agent.py --list`로 에이전트 목록을 봅니다.
 > 3. `python3 scripts/use_agent.py --agent agent-00 --input templates/agent-00-input.sample.json`로 프롬프트 하나를 출력해봅니다.
 > 4. `examples/` 폴더를 열어 샘플 초안과 QA 결과 형식을 확인합니다.
-> 5. Codex에서 `job-application-agent-suite 써서 자소서 초안부터 도와줘`처럼 호출합니다.
+> 5. Codex에서 skill처럼 바로 부르고 싶다면, 이 폴더를 먼저 `~/.codex/skills/job-application-agent-suite`에 넣습니다.
+> 6. 그다음 Codex에서 `job-application-agent-suite 써서 자소서 초안부터 도와줘`처럼 호출합니다.
 
 ## Overview
 
@@ -247,6 +248,11 @@ mkdir -p ~/.codex/skills
 cp -R /path/to/job-application-agent-suite ~/.codex/skills/
 python3 ~/.codex/skills/job-application-agent-suite/scripts/use_agent.py --list
 ```
+
+중요:
+
+- 저장소를 `git clone`만 해도 로컬 스크립트 실행과 예시 확인은 가능합니다.
+- 하지만 Codex에서 `job-application-agent-suite`를 설치된 skill처럼 바로 부르려면 `~/.codex/skills/job-application-agent-suite` 경로에 있어야 합니다.
 
 설치가 끝나면 Codex에게 아래처럼 바로 요청할 수 있습니다.
 
