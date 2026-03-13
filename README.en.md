@@ -4,6 +4,12 @@
 
 A multi-agent toolkit for Korean job application writing. It covers company and role analysis, reusable experience mining, question matching, drafting, tone adjustment, AI-style review, and final packaging.
 
+The image below is a reference screenshot showing a case where GPT Killer returned 0% after the draft was revised toward more grounded judgment and real-person texture.
+
+This is not meant as a guarantee of detector outcomes. It is included as a practical example that writing with clearer personal reasoning and lived context can read more naturally than overly polished, generic wording.
+
+![Copykiller sample result](./assets/copykiller-zero-sample.png)
+
 > 1-minute usage
 >
 > 1. Clone the repository.
@@ -405,17 +411,6 @@ python3 scripts/ai_style_checker.py \
 - `examples/naver-backend-q1/06_ai_style_report.sample.txt`
 - `examples/naver-backend-q1/06_char_window_report.sample.txt`
 - `examples/naver-backend-q1/07_package.sample.md`
-
-</details>
-
-<details>
-<summary>Reference screenshot</summary>
-
-The image below is a reference screenshot showing a case where GPT Killer returned 0% after the draft was revised toward more grounded judgment and real-person texture.
-
-This is not meant as a guarantee of detector outcomes. It is included as a practical example that writing with clearer personal reasoning and lived context can read more naturally than overly polished, generic wording.
-
-![Copykiller sample result](./assets/copykiller-zero-sample.png)
 
 </details>
 

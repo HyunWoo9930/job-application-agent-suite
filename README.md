@@ -4,6 +4,12 @@
 
 한국어 자소서와 커버레터 작성을 위한 멀티 에이전트 툴킷입니다. 회사/직무 분석, 경험 발굴, 문항 매칭, 초안 작성, 톤 보정, AI스러운 문장 점검, 최종 패키징까지 하나의 흐름으로 다룰 수 있습니다.
 
+아래 이미지는 문장을 더 사람다운 판단과 경험 중심으로 다듬었을 때, 추가 검토 과정에서 GPT Killer 결과가 0%로 나온 예시 스크린샷입니다.
+
+이 이미지는 "탐지 회피"를 보장한다는 뜻이 아니라, 너무 매끈한 정답형 문장보다 실제 경험과 판단이 살아 있는 문장이 더 자연스럽게 읽힐 수 있다는 참고 사례입니다.
+
+![Copykiller sample result](./assets/copykiller-zero-sample.png)
+
 > 1분 사용법
 >
 > 1. 저장소를 받습니다.
@@ -410,17 +416,6 @@ python3 scripts/ai_style_checker.py \
 - `examples/naver-backend-q1/06_ai_style_report.sample.txt`
 - `examples/naver-backend-q1/06_char_window_report.sample.txt`
 - `examples/naver-backend-q1/07_package.sample.md`
-
-</details>
-
-<details>
-<summary>Reference screenshot</summary>
-
-아래 이미지는 문장을 더 사람다운 판단과 경험 중심으로 다듬었을 때, 추가 검토 과정에서 GPT Killer 결과가 0%로 나온 예시 스크린샷입니다.
-
-이 이미지는 "탐지 회피"를 보장한다는 뜻이 아니라, 너무 매끈한 정답형 문장보다 실제 경험과 판단이 살아 있는 문장이 더 자연스럽게 읽힐 수 있다는 참고 사례로 넣었습니다.
-
-![Copykiller sample result](./assets/copykiller-zero-sample.png)
 
 </details>
 
