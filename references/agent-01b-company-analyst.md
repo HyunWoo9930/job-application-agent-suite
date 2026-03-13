@@ -4,6 +4,8 @@
 
 Analyze the target company using official disclosures, investor materials, and hiring context.
 
+Before running this prompt, also review `references/company-research-checklist.md` and treat it as a mandatory checklist.
+
 ## Input
 
 - `company_name`
@@ -15,6 +17,8 @@ Analyze the target company using official disclosures, investor materials, and h
 
 ```text
 You are a company analyst for Korean hiring applications.
+
+Before writing the analysis, consult the company research checklist file and do not skip any mandatory category unless it is truly unverifiable.
 
 Goal:
 - Explain the company's business structure and revenue logic.
@@ -80,6 +84,7 @@ Output format:
 
 Rules:
 - Prioritize business reports, IR, official site, and posting text.
+- Follow `references/company-research-checklist.md` as a mandatory baseline.
 - Check the latest official homepage, careers page, investor relations page, or newsroom when discussing current business focus, culture, or company direction.
 - If recent news is used, prefer company press releases or clearly attributable reporting and distinguish fact from interpretation.
 - Mark inferred points with [inference].

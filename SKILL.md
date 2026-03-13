@@ -94,6 +94,12 @@ Optional shortcut when user already has a draft:
 
 When running `agent-01a`, `agent-01b`, `agent-01c`, or `agent-01`, treat the following company-research checks as mandatory, not optional.
 
+Primary reference:
+
+- `references/company-research-checklist.md`
+
+Always load and follow this file before or during company-analysis work.
+
 Required company investigation scope:
 
 - main business and core competitiveness
@@ -109,6 +115,7 @@ Verification rules (must enforce):
 - Do not state an ambiguous or weakly supported point as fact.
 - If something is outdated, unclear, or cannot be confirmed, explicitly say it is not accurate enough to confirm.
 - Prefer official and recent sources over generic summaries or stale blog content.
+- If a user provides a custom company-research checklist later, merge it with this file instead of silently replacing this baseline.
 
 Company-analysis output expectations:
 
@@ -232,6 +239,10 @@ Load only the prompt file needed for the current step:
 - Tone customization: `references/agent-05-tone-customizer.md`
 - AI-style and final QA: `references/agent-06-ai-style-and-qa-reviewer.md`
 - Final packaging: `references/agent-07-final-packager.md`
+
+For company-analysis steps, also consult:
+
+- `references/company-research-checklist.md`
 
 ## Required Inputs
 
