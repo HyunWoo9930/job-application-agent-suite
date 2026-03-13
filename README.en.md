@@ -411,7 +411,9 @@ python3 scripts/ai_style_checker.py \
 <details>
 <summary>Reference screenshot</summary>
 
-The image below is a sample screenshot used as a reference during additional review checks.
+The image below is a reference screenshot showing a case where GPT Killer returned 0% after the draft was revised toward more grounded judgment and real-person texture.
+
+This is not meant as a guarantee of detector outcomes. It is included as a practical example that writing with clearer personal reasoning and lived context can read more naturally than overly polished, generic wording.
 
 ![Copykiller sample result](./assets/copykiller-zero-sample.png)
 

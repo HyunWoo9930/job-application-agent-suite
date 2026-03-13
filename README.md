@@ -416,7 +416,9 @@ python3 scripts/ai_style_checker.py \
 <details>
 <summary>Reference screenshot</summary>
 
-아래 이미지는 검토 결과를 추가 확인하는 과정에서 참고한 예시 스크린샷입니다.
+아래 이미지는 문장을 더 사람다운 판단과 경험 중심으로 다듬었을 때, 추가 검토 과정에서 GPT Killer 결과가 0%로 나온 예시 스크린샷입니다.
+
+이 이미지는 "탐지 회피"를 보장한다는 뜻이 아니라, 너무 매끈한 정답형 문장보다 실제 경험과 판단이 살아 있는 문장이 더 자연스럽게 읽힐 수 있다는 참고 사례로 넣었습니다.
 
 ![Copykiller sample result](./assets/copykiller-zero-sample.png)
 
