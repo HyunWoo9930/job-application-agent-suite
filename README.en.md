@@ -13,6 +13,11 @@ A multi-agent toolkit for Korean job application writing. It covers company and 
 > 5. If you want Codex to call it as a skill, first place this folder in `~/.codex/skills/job-application-agent-suite`.
 > 6. Then ask Codex something like `Use job-application-agent-suite and help me draft one application answer`.
 
+> Important
+>
+> The outputs from this repository should not be treated as final submission-ready essays by default.
+> You should review them yourself, and ideally get additional feedback from another AI or a human reviewer before submitting anything.
+
 ## Overview
 
 The workflow is split into the following stages:
