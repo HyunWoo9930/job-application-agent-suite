@@ -1,0 +1,25 @@
+{
+  "application_questions": [
+    {
+      "question_id": "Q1",
+      "question_text": "지원 동기와 입사 후 기여 방안을 작성해 주세요.",
+      "char_limit": 800
+    }
+  ],
+  "refined_evidence_cards": [
+    {
+      "id": "E03-R1",
+      "title": "결제 API 병목 개선",
+      "action": "쿼리 튜닝, 인덱스 재설계, 캐시 정책 조정",
+      "result_with_metric": "평균 응답시간 35% 단축, p95 420ms -> 270ms",
+      "evidence_source": "장애 보고서/성능 대시보드"
+    }
+  ],
+  "matching_table": [
+    {
+      "question_id": "Q1",
+      "primary_evidence_card": "E03-R1",
+      "match_confidence": "high"
+    }
+  ]
+}

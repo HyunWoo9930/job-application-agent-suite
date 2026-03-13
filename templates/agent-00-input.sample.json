@@ -1,0 +1,23 @@
+{
+  "company_name": "네이버",
+  "role_title": "백엔드 개발자",
+  "job_posting_text_or_link": "https://careers.example.com/naver/backend",
+  "application_questions": [
+    {
+      "question_id": "Q1",
+      "question_text": "지원 동기와 입사 후 기여 방안을 작성해 주세요.",
+      "char_limit": 800
+    },
+    {
+      "question_id": "Q2",
+      "question_text": "가장 도전적이었던 문제 해결 경험을 작성해 주세요.",
+      "char_limit": 1000
+    }
+  ],
+  "candidate_profile": "백엔드 3년차, Java/Spring, 대용량 트래픽 서비스 운영 경험",
+  "experience_notes": "결제 API 병목 개선(응답속도 35% 단축), 장애 대응 프로세스 개선, 로그 기반 원인분석 자동화",
+  "forbidden_claims_or_constraints": [
+    "확인되지 않은 수치 사용 금지",
+    "재직 회사 내부 기밀 노출 금지"
+  ]
+}

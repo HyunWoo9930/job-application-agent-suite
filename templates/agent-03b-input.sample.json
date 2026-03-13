@@ -1,0 +1,39 @@
+{
+  "application_questions": [
+    {
+      "question_id": "Q1",
+      "question_text": "지원 동기와 입사 후 기여 방안을 작성해 주세요.",
+      "char_limit": 800
+    }
+  ],
+  "matching_table": [
+    {
+      "question_id": "Q1",
+      "core_intent": "문제 해결 기반 직무 적합성",
+      "primary_evidence_card": "E03",
+      "backup_evidence_card": "E01",
+      "match_confidence": "low",
+      "refinement_needed": "yes",
+      "recommended_char_budget": 780,
+      "why_this_match_works": "문제 해결 경험은 있으나 개인 기여도와 수치가 약함"
+    }
+  ],
+  "evidence_cards": [
+    {
+      "id": "E03",
+      "title": "결제 API 개선",
+      "action": "쿼리 튜닝과 캐시 조정",
+      "result": "성능 개선",
+      "confidence": "medium",
+      "evidence_source": "project_note"
+    }
+  ],
+  "competency_table": [
+    {
+      "id": "C01",
+      "competency": "성능 최적화",
+      "priority": "high",
+      "confidence": "high"
+    }
+  ]
+}

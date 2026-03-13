@@ -1,0 +1,4 @@
+interface:
+  display_name: "Job Application Agent Suite"
+  short_description: "Build and run agents for resume and essay applications"
+  default_prompt: "Analyze the target role and company, draft application essays from user experiences, then run AI-like writing checks and provide revision suggestions with concrete rewrites."

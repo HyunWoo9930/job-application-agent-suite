@@ -1,0 +1,69 @@
+{
+  "company_name": "네이버",
+  "role_title": "백엔드 개발자",
+  "job_posting_text_or_link": "https://careers.example.com/naver/backend",
+  "industry_context": "검색/커머스 대규모 트래픽 환경",
+  "question_id": "Q1",
+  "question_text": "지원 동기와 입사 후 기여 방안을 작성해 주세요.",
+  "char_limit": 800,
+  "application_questions": [
+    {
+      "question_id": "Q1",
+      "question_text": "지원 동기와 입사 후 기여 방안을 작성해 주세요.",
+      "char_limit": 800
+    }
+  ],
+  "candidate_profile": "백엔드 3년차, Java/Spring, 대용량 트래픽 서비스 운영 경험",
+  "new_experience_notes": [
+    "최근 6개월 프로젝트 경험",
+    "실패 후 복구 경험"
+  ],
+  "experience_notes": "결제 API 병목 개선(응답속도 35% 단축), 장애 대응 프로세스 개선",
+  "essay_corpus_path": "/Users/hyunwoo/Desktop/취업/자기소개서",
+  "target_tone": "구체적이고 담백한 실무형 톤",
+  "forbidden_words_or_phrases": [
+    "열심히 하겠습니다",
+    "무조건",
+    "완벽하게"
+  ],
+  "forbidden_claims_or_constraints": [
+    "확인되지 않은 수치 사용 금지",
+    "기밀 정보 노출 금지"
+  ],
+  "version_notes": "초안 v2 기준",
+  "step_approval_mode": "manual_per_step",
+  "step_approvals": {
+    "agent-00": false,
+    "agent-01a": false,
+    "agent-01b": false,
+    "agent-01c": false,
+    "agent-01": false,
+    "agent-02a": false,
+    "agent-02": false,
+    "agent-03": false,
+    "agent-03b": false,
+    "agent-03c": false,
+    "agent-04": false,
+    "agent-05": false,
+    "agent-06": false,
+    "agent-07": false
+  },
+  "external_feedback_required": true,
+  "external_feedback_notes": "",
+  "agent_outputs": {
+    "agent-00": {},
+    "agent-01a": {},
+    "agent-01b": {},
+    "agent-01c": {},
+    "agent-01": {},
+    "agent-02a": {},
+    "agent-02": {},
+    "agent-03": {},
+    "agent-03b": {},
+    "agent-03c": {},
+    "agent-04": {},
+    "agent-05": {},
+    "agent-06": {},
+    "agent-07": {}
+  }
+}

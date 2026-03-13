@@ -1,0 +1,16 @@
+{
+  "question_text": "지원 동기와 입사 후 기여 방안을 작성해 주세요.",
+  "char_limit": 800,
+  "final_recommended_version": "저는 사용자 문제를 기술로 해결하는 과정에서 동기를 얻습니다. 이전 회사에서 결제 API 지연 이슈를 로그와 APM으로 분석해 병목 지점을 찾았고, DB 인덱스 재설계와 캐시 정책 조정으로 평균 응답 시간을 35% 단축했습니다. 이 과정에서 문제를 구조화하고 우선순위를 정해 빠르게 검증하는 방식이 서비스 품질을 실질적으로 높인다는 점을 확인했습니다. 입사 후에는 트래픽 패턴 기반 성능 개선과 장애 예방 자동화를 통해 안정적인 사용자 경험을 만들겠습니다.",
+  "qa_checklist": {
+    "character_window_pass": true,
+    "question_alignment": true,
+    "evidence_specificity": true,
+    "unsupported_claim_check": true,
+    "duplicate_phrase_check": true,
+    "tone_consistency": true
+  },
+  "flagged_lines": [],
+  "external_feedback_notes": "외부 피드백: 마지막 문장을 더 자연스럽게 연결하고 직무 연관 표현을 강화할 것.",
+  "version_notes": "v1 대비 선언형 문장 축소, 근거 문장 강화"
+}

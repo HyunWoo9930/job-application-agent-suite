@@ -1,0 +1,29 @@
+{
+  "application_questions": [
+    {
+      "question_id": "Q1",
+      "question_text": "지원 동기와 입사 후 기여 방안을 작성해 주세요.",
+      "char_limit": 800
+    }
+  ],
+  "role_keyword_map": [
+    "백엔드 아키텍처",
+    "성능 최적화",
+    "장애 대응 자동화"
+  ],
+  "candidate_profile": "백엔드 3년차, Java/Spring, 운영 안정화 경험",
+  "new_experience_notes": [
+    "최근 6개월 내 새 프로젝트 경험",
+    "실패 후 복구 경험",
+    "조직 내 갈등 조정 경험"
+  ],
+  "essay_corpus_path": "/Users/hyunwoo/Desktop/취업/자기소개서",
+  "essay_corpus_candidates": [
+    {
+      "id": "E001",
+      "source_file": "/Users/hyunwoo/Desktop/취업/자기소개서/CJ ENS(TVING) 백엔드 지원서.docx",
+      "excerpt": "결제 API 병목을 분석해 응답시간을 35% 단축했습니다.",
+      "confidence": "high"
+    }
+  ]
+}

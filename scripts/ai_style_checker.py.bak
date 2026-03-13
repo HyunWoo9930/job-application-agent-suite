@@ -1,0 +1,127 @@
+#!/usr/bin/env python3
+"""Heuristic checker for AI-like patterns in Korean application drafts."""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+from collections import Counter
+from pathlib import Path
+
+GENERIC_PHRASES = [
+    "성장",
+    "역량",
+    "도전",
+    "가치",
+    "최선을 다",
+    "문제를 해결",
+    "협업",
+    "소통",
+    "주도적",
+    "기여",
+]
+
+
+def read_text(file_path: str | None) -> str:
+    if file_path:
+        return Path(file_path).read_text(encoding="utf-8")
+    return sys.stdin.read()
+
+
+def split_sentences(text: str) -> list[str]:
+    parts = re.split(r"(?:[.!?。！？]\s+|다\.\s+)", text.strip())
+    return [p.strip() for p in parts if p.strip()]
+
+
+def tokenize(text: str) -> list[str]:
+    return re.findall(r"[가-힣A-Za-z0-9]+", text)
+
+
+def repeated_ngrams(tokens: list[str], n: int = 3, min_count: int = 2) -> list[tuple[str, int]]:
+    if len(tokens) < n:
+        return []
+    grams = [" ".join(tokens[i : i + n]) for i in range(len(tokens) - n + 1)]
+    counts = Counter(grams)
+    return sorted([(g, c) for g, c in counts.items() if c >= min_count], key=lambda x: (-x[1], x[0]))
+
+
+def detect_generic_phrases(text: str) -> list[tuple[str, int]]:
+    found: list[tuple[str, int]] = []
+    for phrase in GENERIC_PHRASES:
+        count = text.count(phrase)
+        if count:
+            found.append((phrase, count))
+    return sorted(found, key=lambda x: (-x[1], x[0]))
+
+
+def risk_level(score: int) -> str:
+    if score >= 8:
+        return "HIGH"
+    if score >= 4:
+        return "MEDIUM"
+    return "LOW"
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Check AI-like writing patterns.")
+    parser.add_argument("--file", help="Path to input text file", default=None)
+    args = parser.parse_args()
+
+    text = read_text(args.file).strip()
+    if not text:
+        print("[error] no text provided")
+        return 1
+
+    sentences = split_sentences(text)
+    tokens = tokenize(text)
+    avg_sentence_len = (len(tokens) / len(sentences)) if sentences else 0.0
+
+    generic_hits = detect_generic_phrases(text)
+    repeated_trigrams = repeated_ngrams(tokens, n=3, min_count=2)
+
+    score = 0
+    if avg_sentence_len > 28:
+        score += 2
+    if len(generic_hits) >= 4:
+        score += 3
+    elif len(generic_hits) >= 2:
+        score += 2
+    elif len(generic_hits) == 1:
+        score += 1
+
+    repeated_count = len(repeated_trigrams)
+    if repeated_count >= 4:
+        score += 3
+    elif repeated_count >= 2:
+        score += 2
+    elif repeated_count == 1:
+        score += 1
+
+    print("=== AI Style Heuristic Report ===")
+    print(f"sentences: {len(sentences)}")
+    print(f"tokens: {len(tokens)}")
+    print(f"avg_sentence_len: {avg_sentence_len:.2f}")
+    print(f"risk: {risk_level(score)} (score={score})")
+
+    print("\n[generic phrase hits]")
+    if generic_hits:
+        for phrase, count in generic_hits:
+            print(f"- {phrase}: {count}")
+    else:
+        print("- none")
+
+    print("\n[repeated 3-grams]")
+    if repeated_trigrams:
+        for gram, count in repeated_trigrams[:20]:
+            print(f"- {gram}: {count}")
+    else:
+        print("- none")
+
+    print("\n[note]")
+    print("Use this score as a heuristic only. Review meaning and evidence density manually.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
