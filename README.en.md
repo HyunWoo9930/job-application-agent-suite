@@ -430,6 +430,19 @@ No. The repository centers on prompt files and helper scripts.
 
 Yes. A plain `git clone` is enough to run the scripts, inspect the templates, and open the examples. If you want Codex to invoke it like an installed skill, place it under `~/.codex/skills/job-application-agent-suite`.
 
+Example:
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R /path/to/job-application-agent-suite ~/.codex/skills/
+```
+
+If you already have the folder locally:
+
+```bash
+cp -R /absolute/path/job-application-agent-suite ~/.codex/skills/
+```
+
 ### How do I call this skill from Codex?
 
 Mention the skill name directly. For example: `Use job-application-agent-suite and start with company analysis` or `Use job-application-agent-suite and only review my draft`.

@@ -435,6 +435,19 @@ python3 scripts/ai_style_checker.py \
 
 네. `git clone`만 해도 `scripts/` 실행, `templates/` 확인, `examples/` 열람은 가능합니다. 다만 Codex에서 설치된 skill처럼 바로 부르려면 `~/.codex/skills/job-application-agent-suite` 경로에 넣어두는 것이 좋습니다.
 
+예시:
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R /path/to/job-application-agent-suite ~/.codex/skills/
+```
+
+이미 현재 폴더에 있다면:
+
+```bash
+cp -R /absolute/path/job-application-agent-suite ~/.codex/skills/
+```
+
 ### Codex에서 이 스킬을 어떻게 불러야 하나요?
 
 스킬 이름을 같이 말해주면 됩니다. 예를 들면 `job-application-agent-suite 써서 회사 분석부터 해줘`, `job-application-agent-suite로 피드백만 해줘`처럼 요청할 수 있습니다.
