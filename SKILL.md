@@ -90,6 +90,33 @@ Optional shortcut when user already has a draft:
 11. Collect external AI feedback and write it to `external_feedback_notes`.
 12. Run the final-packager agent.
 
+## Default Persistence
+
+Persist analysis outputs by default.
+
+Unless the user explicitly says not to save files, save analysis artifacts automatically.
+
+Default save rules:
+
+- company-only analysis:
+  - `~/job_runs/<company_slug>/company_analysis.md`
+- company + role analysis:
+  - `~/job_runs/<company_slug>/<role_slug>/01_company_role_analysis.md`
+- industry-only analysis:
+  - `~/job_runs/<company_slug>/<role_slug>/01a_industry_analysis.md`
+- company-only step inside a multi-step run:
+  - `~/job_runs/<company_slug>/<role_slug>/01b_company_analysis.md`
+- role-only step inside a multi-step run:
+  - `~/job_runs/<company_slug>/<role_slug>/01c_role_analysis.md`
+
+Persistence rules:
+
+- If no run directory exists, create it automatically.
+- Save the human-readable markdown result first.
+- If the response contains structured lists/tables worth reusing, preserve them in the markdown file rather than dropping them.
+- Tell the user where the file was saved.
+- Only skip saving if the user explicitly asks for chat-only output.
+
 ## Company Research Enforcement
 
 When running `agent-01a`, `agent-01b`, `agent-01c`, or `agent-01`, treat the following company-research checks as mandatory, not optional.
