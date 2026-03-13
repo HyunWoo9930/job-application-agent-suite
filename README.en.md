@@ -426,6 +426,26 @@ python3 scripts/ai_style_checker.py \
 
 No. The repository centers on prompt files and helper scripts.
 
+### Can I use it with just `git clone`?
+
+Yes. A plain `git clone` is enough to run the scripts, inspect the templates, and open the examples. If you want Codex to invoke it like an installed skill, place it under `~/.codex/skills/job-application-agent-suite`.
+
+### How do I call this skill from Codex?
+
+Mention the skill name directly. For example: `Use job-application-agent-suite and start with company analysis` or `Use job-application-agent-suite and only review my draft`.
+
+### Can I submit the output as-is?
+
+Not recommended. The outputs are better treated as drafts, analysis notes, or revision candidates rather than final submission-ready essays. You should review them yourself and ideally get extra feedback from another AI or a human reviewer.
+
+### Are outputs saved automatically?
+
+Yes. Unless you explicitly ask not to save files, the workflow is set up to save analysis artifacts under `~/job_runs/...` by default.
+
+### What language are saved artifacts written in?
+
+Korean by default. Since this workflow is designed for Korean job applications, saved analysis artifacts are normally written in Korean unless you explicitly ask for English output.
+
 ### Does it work on Windows?
 
 It is not fully unsupported. The scripts are mostly portable, but the documented defaults assume macOS/Linux paths. In practice, Windows usage means replacing `python3` with `py` and adapting file paths.
@@ -433,6 +453,22 @@ It is not fully unsupported. The scripts are mostly portable, but the documented
 ### Why is `.pdf` not directly supported?
 
 The current corpus scanner reads `.docx` by parsing document XML and does not include a PDF parser.
+
+### What does `agent-06` actually do?
+
+`agent-06` is not just a binary AI detector. It reviews detector-sensitive phrasing, overly polished structure, and weak human texture together, then gives line-level rewrite guidance.
+
+### What if my draft is too short or too long?
+
+The default target is `char_limit - 20 <= chars <= char_limit`. If it is too short, add more context, reasoning, or specific evidence. If it is too long, trim weak transitions and safe, generic closing phrases first.
+
+### How much should I trust the company analysis?
+
+The company-analysis flow prioritizes official homepage, careers, newsroom, and IR sources, but interpretation and recency issues are still possible. It is safer to verify important details yourself before using them in a final submission.
+
+### Can I use this together with another AI tool?
+
+Yes, and that is often a good idea. A practical workflow is to generate analysis or drafts here, then get a second round of feedback from another AI or a human reviewer before submitting.
 
 ## Contributing
 
