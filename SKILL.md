@@ -90,6 +90,34 @@ Optional shortcut when user already has a draft:
 11. Collect external AI feedback and write it to `external_feedback_notes`.
 12. Run the final-packager agent.
 
+## Company Research Enforcement
+
+When running `agent-01a`, `agent-01b`, `agent-01c`, or `agent-01`, treat the following company-research checks as mandatory, not optional.
+
+Required company investigation scope:
+
+- main business and core competitiveness
+- industry position and strengths
+- latest business focus, new business, and investment direction
+- competitor comparison and differentiation
+- company culture, work environment, and welfare/support systems
+
+Verification rules (must enforce):
+
+- Check the latest official homepage, careers page, newsroom, and IR/investor materials when available.
+- If recent reporting is used, separate verified fact from interpretation.
+- Do not state an ambiguous or weakly supported point as fact.
+- If something is outdated, unclear, or cannot be confirmed, explicitly say it is not accurate enough to confirm.
+- Prefer official and recent sources over generic summaries or stale blog content.
+
+Company-analysis output expectations:
+
+- clearly distinguish official facts vs `[inference]`
+- include evidence sources for current-company claims
+- avoid guessed competitor comparisons
+- avoid guessed culture/welfare claims
+- surface missing verification gaps to the user instead of filling them with confident language
+
 Gate rules (must enforce):
 
 - User approval is required after each step (`manual_per_step`).
@@ -126,6 +154,7 @@ Execution control:
 
 - Always move step-by-step with user confirmation.
 - Do not auto-chain multiple agents in one go unless the user explicitly requests batch mode.
+- During company analysis, do not skip the verification step even if the user asks for a quick summary; instead, keep the summary short but preserve the required checks.
 
 ## Length Guardrail
 
@@ -225,6 +254,12 @@ Always return these artifacts:
 4. Draft answers with character counts
 5. AI-style risk report with line-level rewrite suggestions
 6. Final checklist (length, repetition, unsupported claims, tone consistency)
+
+For company-analysis outputs specifically, also preserve:
+
+1. what was verified from official/recent sources
+2. what remains inferred
+3. what could not be confirmed accurately
 
 `agent-01` synthesis should also preserve:
 
