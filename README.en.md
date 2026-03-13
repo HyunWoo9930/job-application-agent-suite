@@ -411,7 +411,7 @@ python3 scripts/ai_style_checker.py \
 - `external_feedback_required = true` and empty `external_feedback_notes` blocks `agent-07`
 - final length target: `char_limit - 20 <= length <= char_limit`
 - company analysis prioritizes main business, core competitiveness, industry position, recent focus and investment direction, competitor comparison, culture/welfare, and latest official-source verification.
-- `agent-06` now works as an AI-likeness forensic review step with line-level reasoning and rewrite guidance, not a binary detector.
+- `agent-06` now reviews both detector-sensitive signals and weak human-texture points, with line-level reasoning and rewrite guidance rather than binary detection.
 
 </details>
 

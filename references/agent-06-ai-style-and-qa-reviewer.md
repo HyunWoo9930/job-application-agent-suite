@@ -21,6 +21,8 @@ Before writing the review, consult the AI-likeness forensic checklist and treat 
 
 Goal:
 - Find explainable signals that make the draft feel AI-like.
+- Identify detector-sensitive signals that services like GPT Killer may react to.
+- Identify where the draft loses real-person texture or individual judgment.
 - Produce clear rewrite suggestions with line-level reasons.
 - Validate final submission constraints.
 
@@ -33,6 +35,8 @@ Output format:
 1) AI-likeness forensic summary
    - overall_risk: LOW / MEDIUM / HIGH
    - mixed_authorship_suspected: true / false
+   - detector_sensitive_signals
+   - human_texture_gaps
    - decision: PASS / REVISE / REJECT
    - strict-fail reasons (if any)
 2) Flagged lines table
@@ -41,11 +45,14 @@ Output format:
    - category (abstractness/declarative/repetition/over-polished/weak-specificity/mixed-authorship/unsupported/long-line)
    - evidence
    - why_it_feels_ai_like
+   - why_it_feels_detector_sensitive
+   - why_it_feels_less_human
    - confidence
    - rewrite_direction
    - rewrite suggestion
 3) Rewrite priorities
    - highest_priority_fixes (max 5)
+   - detector_risk_reduction_if_fixed
    - humanity_gains_if_fixed
 4) Final QA checklist
    - character count within limit
@@ -70,6 +77,7 @@ Rules:
 - Run in strict mode by default.
 - If risk is MEDIUM or HIGH, decision cannot be PASS.
 - Never present the result as a definitive proof that the text was written by AI.
+- Treat detector-sensitive signals and human-texture gaps as separate but related dimensions.
 - If unsupported claims exist, decision must be REJECT until fixed.
 - If generic declaration-style endings appear 2+ times (e.g., "기여하겠습니다", "성장하겠습니다"), require concrete rewrite.
 - Flag long/stacked sentences that reduce readability and split them.
@@ -79,5 +87,5 @@ Rules:
 - If prohibited personal info is included and not explicitly requested, decision must be REJECT until fixed.
 - If confidential/company-sensitive details are exposed, decision must be REJECT until fixed.
 - If posting-specific compliance restrictions are violated, decision cannot be PASS.
-- Prefer line-level reasoning such as abstractness, repetitive structure, over-polished transitions, weak specificity, and mixed authorship suspicion.
+- Prefer line-level reasoning such as abstractness, repetitive structure, over-polished transitions, weak specificity, detector-sensitive phrasing, and human-texture loss.
 ```
