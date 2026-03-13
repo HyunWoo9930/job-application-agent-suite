@@ -215,6 +215,32 @@ cp -R /path/to/job-application-agent-suite ~/.codex/skills/
 python3 ~/.codex/skills/job-application-agent-suite/scripts/use_agent.py --list
 ```
 
+After installation, you can ask Codex to use the skill directly.
+
+```text
+Use job-application-agent-suite and start with company-role analysis for a Naver backend application.
+```
+
+```text
+Use this skill and only do the company analysis step first.
+```
+
+```text
+Load job-application-agent-suite and run only agent-06 for draft QA.
+```
+
+The important part is mentioning the skill name explicitly so Codex knows to use the prompts and workflow from this repository.
+
+<details>
+<summary>Example requests for Codex</summary>
+
+- `Use job-application-agent-suite to analyze Samsung DS roles`
+- `Use job-application-agent-suite to draft one application answer`
+- `Load this skill and only run QA on my existing draft`
+- `Use this skill starting from experience mining`
+
+</details>
+
 <details>
 <summary>Scripts</summary>
 

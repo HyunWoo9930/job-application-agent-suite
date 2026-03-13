@@ -218,6 +218,32 @@ cp -R /path/to/job-application-agent-suite ~/.codex/skills/
 python3 ~/.codex/skills/job-application-agent-suite/scripts/use_agent.py --list
 ```
 
+설치가 끝나면 Codex에게 아래처럼 바로 요청할 수 있습니다.
+
+```text
+job-application-agent-suite 써서 네이버 백엔드 자소서 분석 시작해줘.
+```
+
+```text
+이 스킬로 회사 분석만 먼저 해줘.
+```
+
+```text
+job-application-agent-suite 불러서 agent-06만 돌려줘.
+```
+
+핵심은 스킬 이름을 함께 말해주는 것입니다. 그러면 "이 저장소 안의 프롬프트와 규칙을 사용해서 진행해달라"는 뜻이 더 분명해집니다.
+
+<details>
+<summary>Codex에서 이렇게 부르면 됩니다</summary>
+
+- `job-application-agent-suite 써서 삼성전자 DS 직무 분석해줘`
+- `job-application-agent-suite로 자소서 문항 하나만 초안 써줘`
+- `job-application-agent-suite 불러서 기존 초안 QA만 해줘`
+- `이 스킬로 경험 카드화부터 해줘`
+
+</details>
+
 <details>
 <summary>Scripts</summary>
 
