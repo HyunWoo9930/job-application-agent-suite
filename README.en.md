@@ -4,6 +4,14 @@
 
 A multi-agent toolkit for Korean job application writing. It covers company and role analysis, reusable experience mining, question matching, drafting, tone adjustment, AI-style review, and final packaging.
 
+> 1-minute usage
+>
+> 1. Clone the repository.
+> 2. Run `python3 scripts/use_agent.py --list` to see available agents.
+> 3. Run `python3 scripts/use_agent.py --agent agent-00 --input templates/agent-00-input.sample.json` to print one prompt.
+> 4. Open the `examples/` folder to see sample draft and QA output formats.
+> 5. In Codex, say something like `Use job-application-agent-suite and help me draft one application answer`.
+
 ## Overview
 
 The workflow is split into the following stages:
@@ -41,6 +49,7 @@ job-application-agent-suite/
 ├── README.md
 ├── README.en.md
 ├── CONTRIBUTING.md
+├── examples/
 ├── LICENSE
 ├── SKILL.md
 ├── agents/
@@ -52,6 +61,7 @@ job-application-agent-suite/
 - `references/`: agent prompt files
 - `scripts/`: pipeline helper scripts
 - `templates/`: sample JSON inputs
+- `examples/`: beginner-friendly sample outputs
 - `SKILL.md`: Codex skill operating rules
 
 </details>
@@ -89,6 +99,15 @@ Example:
 ```powershell
 py scripts\use_agent.py --list
 py scripts\scan_experience_corpus.py --path "$HOME\Desktop\취업\자기소개서"
+```
+
+Windows quick start:
+
+```powershell
+git clone https://github.com/HyunWoo9930/job-application-agent-suite.git
+cd job-application-agent-suite
+py scripts\use_agent.py --list
+py scripts\use_agent.py --agent agent-00 --input templates\agent-00-input.sample.json
 ```
 
 </details>
@@ -187,6 +206,17 @@ The simplest workflow is:
 2. send that prompt to Codex, Claude, OpenAI, or another model
 3. save the result into `state.json` or the draft files
 4. run the length and AI-style checks at the end
+
+</details>
+
+<details>
+<summary>Recommended files for first-time users</summary>
+
+1. `templates/agent-00-input.sample.json`
+2. `templates/pipeline-state.sample.json`
+3. `examples/naver-backend-q1/04_draft.sample.txt`
+4. `examples/naver-backend-q1/06_ai_style_report.sample.txt`
+5. `examples/naver-backend-q1/07_package.sample.md`
 
 </details>
 
@@ -354,6 +384,16 @@ python3 scripts/ai_style_checker.py \
 - `templates/agent-06-input-from-existing-draft.sample.json`
 - `templates/agent-07-input.sample.json`
 - `templates/pipeline-state.sample.json`
+
+</details>
+
+<details>
+<summary>Example outputs</summary>
+
+- `examples/naver-backend-q1/04_draft.sample.txt`
+- `examples/naver-backend-q1/06_ai_style_report.sample.txt`
+- `examples/naver-backend-q1/06_char_window_report.sample.txt`
+- `examples/naver-backend-q1/07_package.sample.md`
 
 </details>
 

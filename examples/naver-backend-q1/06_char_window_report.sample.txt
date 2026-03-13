@@ -1,0 +1,5 @@
+=== Character Window Check ===
+count_mode: raw
+char_count: 271
+allowed_range: 780..800
+status: FAIL (too short by 509 chars)

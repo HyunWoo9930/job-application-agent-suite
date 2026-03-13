@@ -4,6 +4,14 @@
 
 한국어 자소서와 커버레터 작성을 위한 멀티 에이전트 툴킷입니다. 회사/직무 분석, 경험 발굴, 문항 매칭, 초안 작성, 톤 보정, AI스러운 문장 점검, 최종 패키징까지 하나의 흐름으로 다룰 수 있습니다.
 
+> 1분 사용법
+>
+> 1. 저장소를 받습니다.
+> 2. `python3 scripts/use_agent.py --list`로 에이전트 목록을 봅니다.
+> 3. `python3 scripts/use_agent.py --agent agent-00 --input templates/agent-00-input.sample.json`로 프롬프트 하나를 출력해봅니다.
+> 4. `examples/` 폴더를 열어 샘플 초안과 QA 결과 형식을 확인합니다.
+> 5. Codex에서 `job-application-agent-suite 써서 자소서 초안부터 도와줘`처럼 호출합니다.
+
 ## Overview
 
 이 저장소는 자소서 작성 과정을 아래 단계로 분리합니다.
@@ -41,6 +49,7 @@ job-application-agent-suite/
 ├── README.md
 ├── README.en.md
 ├── CONTRIBUTING.md
+├── examples/
 ├── LICENSE
 ├── SKILL.md
 ├── agents/
@@ -53,6 +62,7 @@ job-application-agent-suite/
 - `references/`: 단계별 에이전트 프롬프트
 - `scripts/`: 파이프라인 보조 스크립트
 - `templates/`: 샘플 입력 JSON
+- `examples/`: 초보자용 샘플 산출물
 - `SKILL.md`: Codex skill 운영 규칙
 
 </details>
@@ -90,6 +100,15 @@ Windows는 아예 불가능한 상태는 아닙니다. 현재 스크립트들은
 ```powershell
 py scripts\use_agent.py --list
 py scripts\scan_experience_corpus.py --path "$HOME\Desktop\취업\자기소개서"
+```
+
+Windows 빠른 시작 예시:
+
+```powershell
+git clone https://github.com/HyunWoo9930/job-application-agent-suite.git
+cd job-application-agent-suite
+py scripts\use_agent.py --list
+py scripts\use_agent.py --agent agent-00 --input templates\agent-00-input.sample.json
 ```
 
 </details>
@@ -190,6 +209,17 @@ python3 scripts/ai_style_checker.py --file /tmp/draft.txt
 2. 그 프롬프트를 Codex/Claude/OpenAI 같은 모델에 넣기
 3. 결과를 `state.json`이나 초안 파일에 반영
 4. 마지막에 길이 검사와 AI 스타일 검사를 실행
+
+</details>
+
+<details>
+<summary>초보자에게 추천하는 파일 열어보기 순서</summary>
+
+1. `templates/agent-00-input.sample.json`
+2. `templates/pipeline-state.sample.json`
+3. `examples/naver-backend-q1/04_draft.sample.txt`
+4. `examples/naver-backend-q1/06_ai_style_report.sample.txt`
+5. `examples/naver-backend-q1/07_package.sample.md`
 
 </details>
 
@@ -359,6 +389,16 @@ python3 scripts/ai_style_checker.py \
 - `templates/agent-06-input-from-existing-draft.sample.json`
 - `templates/agent-07-input.sample.json`
 - `templates/pipeline-state.sample.json`
+
+</details>
+
+<details>
+<summary>Example outputs</summary>
+
+- `examples/naver-backend-q1/04_draft.sample.txt`
+- `examples/naver-backend-q1/06_ai_style_report.sample.txt`
+- `examples/naver-backend-q1/06_char_window_report.sample.txt`
+- `examples/naver-backend-q1/07_package.sample.md`
 
 </details>
 

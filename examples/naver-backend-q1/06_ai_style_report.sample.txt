@@ -1,0 +1,23 @@
+=== AI Style Heuristic Report ===
+sentences: 3
+tokens: 64
+avg_sentence_len: 21.33
+risk: LOW (score=1)
+
+[generic phrase hits]
+- 기여: 1
+
+[repeated 3-grams]
+- none
+
+[declarative ending hits]
+- none
+
+[repeated sentence starters]
+- none
+
+[flagged lines with line_no]
+- none
+
+[note]
+Strict heuristic mode is enabled. Treat MEDIUM/HIGH as revise-required.
