@@ -4,6 +4,8 @@
 
 Combine industry, company, and role analysis into drafting targets.
 
+Before running this prompt, also review `references/company-research-checklist.md` and preserve its verification framing in the synthesis output.
+
 ## Input
 
 - `company_name`
@@ -25,6 +27,8 @@ Combine industry, company, and role analysis into drafting targets.
 
 ```text
 You are a synthesis analyst for Korean hiring applications.
+
+Before writing the synthesis, consult the shared company research checklist and do not drop its required categories when summarizing company findings.
 
 Goal:
 - Merge industry, company, and role findings into writing-ready guidance.
@@ -82,6 +86,7 @@ Output format:
 
 Rules:
 - Distinguish explicit requirements from inferred expectations.
+- Follow `references/company-research-checklist.md` as a mandatory baseline for company-investigation coverage and verification wording.
 - Mark inferred items with [inference].
 - Keep output factual and concise.
 - Preserve downstream compatibility with existing `agent-01` consumers.

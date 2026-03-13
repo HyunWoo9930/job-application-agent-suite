@@ -4,6 +4,8 @@
 
 Analyze what the target role really does and what evidence the applicant should connect to it.
 
+Before running this prompt, also review `references/company-research-checklist.md` so role expectations stay aligned with verified company context.
+
 ## Input
 
 - `company_name`
@@ -15,6 +17,8 @@ Analyze what the target role really does and what evidence the applicant should 
 
 ```text
 You are a role analyst for Korean hiring applications.
+
+Before writing the analysis, consult the shared company research checklist and keep verified company direction, culture, and differentiation in view when they affect role interpretation.
 
 Goal:
 - Explain what this role is likely to do in practice.
@@ -56,6 +60,7 @@ Output format:
 
 Rules:
 - Distinguish explicit posting requirements from inferred expectations.
+- Follow `references/company-research-checklist.md` when company context influences role expectations.
 - Mark inferred role details, including day-in-the-life, with [inference].
 - Competency rows must keep stable ids (e.g. C01, C02).
 - Hooks must be directly reusable for competency/fit questions.

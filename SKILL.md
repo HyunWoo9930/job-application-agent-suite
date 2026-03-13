@@ -97,6 +97,7 @@ When running `agent-01a`, `agent-01b`, `agent-01c`, or `agent-01`, treat the fol
 Primary reference:
 
 - `references/company-research-checklist.md`
+- `references/company-research-checklist.json`
 
 Always load and follow this file before or during company-analysis work.
 
@@ -243,6 +244,7 @@ Load only the prompt file needed for the current step:
 For company-analysis steps, also consult:
 
 - `references/company-research-checklist.md`
+- `references/company-research-checklist.json`
 
 ## Required Inputs
 

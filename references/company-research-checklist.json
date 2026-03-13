@@ -1,0 +1,61 @@
+{
+  "name": "company-research-checklist",
+  "version": "1.0.0",
+  "purpose": "Mandatory research checklist for company-analysis steps in the job-application-agent-suite skill.",
+  "required_categories": [
+    {
+      "id": "company_overview",
+      "title": "기업 개요 및 주요 사업 분석",
+      "must_cover": [
+        "기업의 주요 사업",
+        "각 사업의 가치 창출 방식",
+        "핵심 경쟁력",
+        "산업 내 위치와 강점"
+      ]
+    },
+    {
+      "id": "latest_focus",
+      "title": "최신 사업 동향 및 투자 방향",
+      "must_cover": [
+        "최근 집중 사업",
+        "신사업 또는 확장 영역",
+        "미래 성장성을 위한 투자 분야",
+        "해당 방향이 중요한 이유"
+      ]
+    },
+    {
+      "id": "competitor_comparison",
+      "title": "경쟁사 비교 및 차별점 분석",
+      "must_cover": [
+        "직접 경쟁사 또는 peer group",
+        "경쟁 축",
+        "차별점",
+        "자사 우위 또는 약점"
+      ]
+    },
+    {
+      "id": "culture_and_welfare",
+      "title": "기업 문화 및 복지 분석",
+      "must_cover": [
+        "기업 문화",
+        "근무 환경",
+        "복지 제도",
+        "일반적인 IT 기업 대비 차이점"
+      ]
+    }
+  ],
+  "verification_rules": [
+    "최신 공식 홈페이지, 채용 페이지, 뉴스룸, IR 자료를 우선 확인한다.",
+    "최근 기사나 외부 보도를 사용할 경우 사실과 해석을 분리한다.",
+    "모호하거나 확인할 수 없는 내용은 사실처럼 단정하지 않는다.",
+    "확인이 어렵다면 정확히 확인되지 않음 또는 정확하지 않다라고 명시한다.",
+    "추정 내용은 반드시 [inference]로 표시한다."
+  ],
+  "output_must_preserve": [
+    "공식 자료로 확인된 내용",
+    "최신성 검증 여부",
+    "추정한 내용",
+    "끝까지 확인되지 않은 내용",
+    "자소서에 활용 가능한 시사점"
+  ]
+}

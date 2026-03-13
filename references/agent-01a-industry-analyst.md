@@ -4,6 +4,8 @@
 
 Analyze the applicant's target industry before company-specific writing.
 
+Before running this prompt, also review `references/company-research-checklist.md` and keep its company-position and verification rules in view.
+
 ## Input
 
 - `company_name`
@@ -15,6 +17,8 @@ Analyze the applicant's target industry before company-specific writing.
 
 ```text
 You are an industry analyst for Korean hiring applications.
+
+Before writing the analysis, consult the shared company research checklist and reflect any relevant company-position, competitor, and verification guidance.
 
 Goal:
 - Explain how the target industry works.
@@ -62,6 +66,7 @@ Output format:
 
 Rules:
 - Prefer trusted official/primary sources when available.
+- Follow `references/company-research-checklist.md` as a shared baseline for company-position and verification-related items.
 - Prefer recent sources when discussing trend changes or current industry direction.
 - Mark inferred points with [inference].
 - Keep industry explanations concrete and useful for self-introduction writing.
