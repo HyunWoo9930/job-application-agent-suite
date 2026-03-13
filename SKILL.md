@@ -117,6 +117,12 @@ Persistence rules:
 - Tell the user where the file was saved.
 - Only skip saving if the user explicitly asks for chat-only output.
 
+Language rules for saved artifacts:
+
+- Default saved analysis artifacts should be written in Korean.
+- If the user explicitly requests English output, the saved artifact may be written in English.
+- For Korean job-application workflows, prefer Korean headings, Korean summaries, and Korean writing hooks by default.
+
 ## Company Research Enforcement
 
 When running `agent-01a`, `agent-01b`, `agent-01c`, or `agent-01`, treat the following company-research checks as mandatory, not optional.
