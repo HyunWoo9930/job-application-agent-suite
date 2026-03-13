@@ -279,6 +279,10 @@ For company-analysis steps, also consult:
 - `references/company-research-checklist.md`
 - `references/company-research-checklist.json`
 
+For AI-like writing review, also consult:
+
+- `references/ai-likeness-forensic-checklist.md`
+
 ## Required Inputs
 
 Collect and normalize these inputs before drafting:
