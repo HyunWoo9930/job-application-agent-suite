@@ -87,8 +87,9 @@ Optional shortcut when user already has a draft:
 8. Run the drafting assistant agent.
 9. Run the tone-customizer agent.
 10. Run the AI-style reviewer and final QA checker.
-11. Collect external AI feedback and write it to `external_feedback_notes`.
-12. Run the final-packager agent.
+11. Run the human-voice enhancer when the draft feels too polished, too generic, or too detector-driven.
+12. Collect external AI feedback and write it to `external_feedback_notes`.
+13. Run the final-packager agent.
 
 ## Default Persistence
 
@@ -188,8 +189,9 @@ When the user writes one question at a time, use this order:
 7. Run `agent-04` draft (ambition questions use SMART 1/3/5-year block).
 8. Run `agent-05` tone adjust.
 9. Run `agent-06` final QA + blind/compliance check.
-10. Collect external AI feedback and update `external_feedback_notes`.
-11. Run `agent-07` final packaging.
+10. Run `agent-06b` if the draft needs stronger real-person judgment, texture, or lived context.
+11. Collect external AI feedback and update `external_feedback_notes`.
+12. Run `agent-07` final packaging.
 
 Execution control:
 
@@ -229,12 +231,14 @@ If the user asks for only one step, run only that agent and skip others.
 - `agent-04` or `drafting assistant`: draft answers only
 - `agent-05` or `tone customizer`: rewrite tone only
 - `agent-06` or `ai-style reviewer`: feedback and AI-like pattern review only
+- `agent-06b` or `human voice enhancer`: revise toward real-person judgment, lived context, and less generic tone
 - `agent-07` or `final packager`: package final submission output only
 
 User utterances that should trigger single-agent mode:
 
 - "agent-06만 돌려줘"
 - "피드백만 해줘"
+- "사람 느낌 나게 다듬어줘"
 - "회사 분석만 해줘"
 - "초안만 써줘"
 - "문항 하나만 기준으로 경험 채굴해줘"
@@ -252,6 +256,7 @@ python3 scripts/use_agent.py --agent agent-03b
 python3 scripts/use_agent.py --agent agent-03c
 python3 scripts/use_agent.py --agent agent-04
 python3 scripts/use_agent.py --agent agent-06
+python3 scripts/use_agent.py --agent agent-06b
 python3 scripts/use_agent.py --agent agent-07
 ```
 
@@ -272,6 +277,7 @@ Load only the prompt file needed for the current step:
 - Drafting: `references/agent-04-drafting-assistant.md`
 - Tone customization: `references/agent-05-tone-customizer.md`
 - AI-style and final QA: `references/agent-06-ai-style-and-qa-reviewer.md`
+- Human voice enhancement: `references/agent-06b-human-voice-enhancer.md`
 - Final packaging: `references/agent-07-final-packager.md`
 
 For company-analysis steps, also consult:
@@ -282,6 +288,10 @@ For company-analysis steps, also consult:
 For AI-like writing review, also consult:
 
 - `references/ai-likeness-forensic-checklist.md`
+
+For human-voice enhancement, also consult:
+
+- `references/human-voice-enhancement-checklist.md`
 
 ## Required Inputs
 
