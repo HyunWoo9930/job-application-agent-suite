@@ -101,6 +101,95 @@ cd job-application-agent-suite
 python3 scripts/use_agent.py --list
 ```
 
+If you are new to this repository, the walkthrough below is the fastest way to understand how it works.
+
+<details open>
+<summary>Beginner walkthrough</summary>
+
+### 1. What do I need before I start?
+
+You only need three things:
+
+- a target company and role
+- one application question with a character limit
+- a few lines of experience notes
+
+Example:
+
+- company: `Naver`
+- role: `Backend Engineer`
+- question: `Why do you want to join us, and how will you contribute after joining?`
+- limit: `800`
+- notes: `payment API bottleneck fix`, `35% latency reduction`, `incident-response automation`
+
+### 2. First command to run
+
+This shows the available agents.
+
+```bash
+python3 scripts/use_agent.py --list
+```
+
+### 3. Print one prompt with sample input
+
+```bash
+python3 scripts/use_agent.py --agent agent-00 --input templates/agent-00-input.sample.json
+```
+
+The long text printed here is the actual prompt you would feed into your LLM workflow.
+
+### 4. Create a run directory for one question
+
+```bash
+mkdir -p ~/job_runs/naver_backend/Q1
+python3 scripts/orchestrate_pipeline.py \
+  --run-dir ~/job_runs/naver_backend/Q1 \
+  --init-run-dir \
+  --input templates/pipeline-state.sample.json
+```
+
+### 5. Check what was created
+
+```bash
+ls -la ~/job_runs/naver_backend/Q1
+```
+
+You should see files such as:
+
+- `state.json`: current pipeline state
+- `04_draft.txt`: draft output
+- `05_tone.txt`: tone-adjusted version
+- `06_qa.json`: QA results
+- `07_package.md`: final packaged output
+
+### 6. If you already have older essays, scan them for reusable experiences
+
+```bash
+python3 scripts/scan_experience_corpus.py \
+  --path ~/Desktop/취업/자기소개서 \
+  --write-output /tmp/corpus_candidates.json
+```
+
+This prints reusable experience candidates as JSON.
+
+### 7. If you already have a draft, validate it immediately
+
+```bash
+python3 scripts/char_window_check.py --file /tmp/draft.txt --char-limit 800
+python3 scripts/ai_style_checker.py --file /tmp/draft.txt
+```
+
+### 8. What is the normal usage pattern?
+
+The simplest workflow is:
+
+1. print a prompt with `use_agent.py`
+2. send that prompt to Codex, Claude, OpenAI, or another model
+3. save the result into `state.json` or the draft files
+4. run the length and AI-style checks at the end
+
+</details>
+
 Print a prompt:
 
 ```bash
@@ -215,6 +304,17 @@ python3 scripts/char_window_check.py \
 python3 scripts/ai_style_checker.py \
   --file ~/job_runs/naver_backend/Q1/04_draft.txt
 ```
+
+</details>
+
+<details>
+<summary>What output should I expect?</summary>
+
+- `use_agent.py`: prints prompt text in the terminal
+- `orchestrate_pipeline.py --init-run-dir`: creates a run directory and starter files
+- `scan_experience_corpus.py`: prints JSON candidates and can save them to a file
+- `char_window_check.py`: prints `PASS` or `FAIL`
+- `ai_style_checker.py`: prints repeated patterns, flagged lines, and a `LOW/MEDIUM/HIGH` risk level
 
 </details>
 

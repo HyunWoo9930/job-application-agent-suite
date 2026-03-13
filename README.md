@@ -102,6 +102,97 @@ cd job-application-agent-suite
 python3 scripts/use_agent.py --list
 ```
 
+처음 보는 사용자는 아래 순서만 따라해도 전체 감을 빠르게 잡을 수 있습니다.
+
+<details open>
+<summary>Beginner walkthrough</summary>
+
+### 1. 무엇을 준비하면 되나요?
+
+아래 3가지만 있으면 됩니다.
+
+- 지원할 회사명과 직무명
+- 자소서 문항 1개와 글자 수 제한
+- 내가 했던 경험 메모 몇 줄
+
+예시:
+
+- 회사명: `네이버`
+- 직무명: `백엔드 개발자`
+- 문항: `지원 동기와 입사 후 기여 방안을 작성해 주세요.`
+- 글자 수: `800`
+- 경험 메모: `결제 API 병목 개선`, `응답시간 35% 단축`, `장애 대응 자동화`
+
+### 2. 가장 먼저 해볼 명령
+
+아래 명령은 "어떤 에이전트가 들어 있는지"부터 보여줍니다.
+
+```bash
+python3 scripts/use_agent.py --list
+```
+
+### 3. 샘플 입력으로 프롬프트 하나 출력해보기
+
+아래 명령은 입력 검증용 에이전트 프롬프트를 바로 보여줍니다.
+
+```bash
+python3 scripts/use_agent.py --agent agent-00 --input templates/agent-00-input.sample.json
+```
+
+여기서 보이는 긴 텍스트가 실제로 LLM에게 넣을 프롬프트입니다.
+
+### 4. 문항 하나 기준으로 실행 폴더 만들기
+
+```bash
+mkdir -p ~/job_runs/naver_backend/Q1
+python3 scripts/orchestrate_pipeline.py \
+  --run-dir ~/job_runs/naver_backend/Q1 \
+  --init-run-dir \
+  --input templates/pipeline-state.sample.json
+```
+
+### 5. 어떤 파일이 생겼는지 확인하기
+
+```bash
+ls -la ~/job_runs/naver_backend/Q1
+```
+
+정상이라면 아래 같은 파일이 생깁니다.
+
+- `state.json`: 현재 진행 상태
+- `04_draft.txt`: 초안 저장용
+- `05_tone.txt`: 톤 보정본 저장용
+- `06_qa.json`: QA 결과 저장용
+- `07_package.md`: 최종 패키지 저장용
+
+### 6. 기존 자소서 폴더가 있다면 경험 후보 뽑기
+
+```bash
+python3 scripts/scan_experience_corpus.py \
+  --path ~/Desktop/취업/자기소개서 \
+  --write-output /tmp/corpus_candidates.json
+```
+
+이 명령을 실행하면 재사용하기 좋아 보이는 경험 후보가 JSON으로 출력됩니다.
+
+### 7. 이미 써둔 초안이 있다면 바로 검사하기
+
+```bash
+python3 scripts/char_window_check.py --file /tmp/draft.txt --char-limit 800
+python3 scripts/ai_style_checker.py --file /tmp/draft.txt
+```
+
+### 8. 이 저장소를 어떻게 쓰는 건가요?
+
+가장 쉬운 사용 방식은 아래 흐름입니다.
+
+1. `use_agent.py`로 원하는 단계의 프롬프트를 출력
+2. 그 프롬프트를 Codex/Claude/OpenAI 같은 모델에 넣기
+3. 결과를 `state.json`이나 초안 파일에 반영
+4. 마지막에 길이 검사와 AI 스타일 검사를 실행
+
+</details>
+
 특정 프롬프트 출력:
 
 ```bash
@@ -218,6 +309,17 @@ python3 scripts/char_window_check.py \
 python3 scripts/ai_style_checker.py \
   --file ~/job_runs/naver_backend/Q1/04_draft.txt
 ```
+
+</details>
+
+<details>
+<summary>What output should I expect?</summary>
+
+- `use_agent.py`: 프롬프트 텍스트가 터미널에 출력됩니다.
+- `orchestrate_pipeline.py --init-run-dir`: 문항별 실행 폴더와 기본 파일이 생성됩니다.
+- `scan_experience_corpus.py`: 경험 후보 JSON이 출력되며, 필요하면 파일로 저장할 수 있습니다.
+- `char_window_check.py`: `PASS` 또는 `FAIL`이 출력됩니다.
+- `ai_style_checker.py`: 반복 표현, 선언형 문장, 위험도(`LOW/MEDIUM/HIGH`)가 출력됩니다.
 
 </details>
 
